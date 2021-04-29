@@ -33,34 +33,6 @@ export const Home: React.FC = () => {
 
     const history = useHistory();
 
-    useEffect(() => {
-        const delimiterPosition = searched ? searched.indexOf('&') : -1;
-        const hasSecondUser = delimiterPosition !== -1;
-
-        if (hasSecondUser) {
-            const userName1 = searched.slice(0, delimiterPosition);
-            const userName2 = searched.slice(delimiterPosition + 1);
-
-            setSearchUserValue(userName1);
-            searchUser(userName1, setUserLogin);
-            setSearchUserValue2(userName2);
-            searchUser(userName2, setUserLogin2);
-            setToggleSecondUser(true);
-        } else {
-            setSearchUserValue(searched);
-            searchUser(searched, setUserLogin);
-        }
-    }, [searched]);
-
-    if (!isLoggedIn) {
-        return <Redirect to="/login" />;
-    }
-
-    const handleSearch = (searchValue: string, setState: setState) => {
-        setState('');
-        setState(searchValue);
-    };
-
     const onSearch = (userName: string, isSecondUser = false) => {
         history.push(userName);
 
@@ -76,6 +48,15 @@ export const Home: React.FC = () => {
     const searchUser = (searchUserValue: string, setLogin: setState) => {
         sessionSaver.setUserName(searchUserValue);
         setLogin(searchUserValue);
+    };
+
+    if (!isLoggedIn) {
+        return <Redirect to="/login" />;
+    }
+
+    const handleSearch = (searchValue: string, setState: setState) => {
+        setState('');
+        setState(searchValue);
     };
 
     const deleteSecondUser = () => {
@@ -96,6 +77,25 @@ export const Home: React.FC = () => {
             </Box>
         );
     };
+
+    useEffect(() => {
+        const delimiterPosition = searched ? searched.indexOf('&') : -1;
+        const hasSecondUser = delimiterPosition !== -1;
+
+        if (hasSecondUser) {
+            const userName1 = searched.slice(0, delimiterPosition);
+            const userName2 = searched.slice(delimiterPosition + 1);
+
+            setSearchUserValue(userName1);
+            searchUser(userName1, setUserLogin);
+            setSearchUserValue2(userName2);
+            searchUser(userName2, setUserLogin2);
+            setToggleSecondUser(true);
+        } else {
+            setSearchUserValue(searched);
+            searchUser(searched, setUserLogin);
+        }
+    }, [searched]);
 
     return (
         <Container className={classes.container}>
