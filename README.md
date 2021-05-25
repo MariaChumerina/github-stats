@@ -20,15 +20,15 @@
   * Возможность увидеть на одном графике сразу два графика активности: для каждого юзера, например, разными цветами, чтобы сравнить. 
 * *Можно посмотреть людей, с которыми автор часто оказывается в одном репозитории.
 
-Пока я не задеплоила проект, чтобы запустить его, нужен .env файл с константами, можно написать мне в тг (@mashhatt) или:
-(первые две нужно получить, создав OAuth Apps в Developer settings github-a, остальную информацию при создании OAuth Apps указать как в инициализированных константах ниже)
-REACT_APP_CLIENT_ID=
-REACT_APP_CLIENT_SECRET=
-REACT_APP_REDIRECT_URI=http://localhost:3000/login
-REACT_APP_PROXY_URL=http://localhost:5000/authenticate
-SERVER_PORT=5000
-BASE_URL=http://localhost:3000
-
+Пока я не задеплоила проект, чтобы запустить его, нужен .env файл с константами, можно написать мне в тг (@mashhatt) или:<br/>
+(первые две нужно получить, создав OAuth Apps в Developer settings github-a, остальную информацию при создании OAuth Apps указать как в инициализированных константах ниже)<br/>
+REACT_APP_CLIENT_ID=<br/>
+REACT_APP_CLIENT_SECRET=<br/>
+REACT_APP_REDIRECT_URI=http://localhost:3000/login<br/>
+REACT_APP_PROXY_URL=http://localhost:5000/authenticate<br/>
+SERVER_PORT=5000<br/>
+BASE_URL=http://localhost:3000<br/>
+<br/>
 Copy project and run:
 ```sh
 npm install
