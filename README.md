@@ -19,3 +19,25 @@
   * Посмотреть языки, количество репозиториев и все остальные параметры для двух человек сразу
   * Возможность увидеть на одном графике сразу два графика активности: для каждого юзера, например, разными цветами, чтобы сравнить. 
 * *Можно посмотреть людей, с которыми автор часто оказывается в одном репозитории.
+
+Пока я не задеплоила проект, чтобы запустить его, нужен .env файл с константами, можно написать мне в тг (@mashhatt) или:
+(первые две нужно получить, создав OAuth Apps в Developer settings github-a, остальную информацию при создании OAuth Apps указать как в инициализированных константах ниже)
+REACT_APP_CLIENT_ID=
+REACT_APP_CLIENT_SECRET=
+REACT_APP_REDIRECT_URI=http://localhost:3000/login
+REACT_APP_PROXY_URL=http://localhost:5000/authenticate
+SERVER_PORT=5000
+BASE_URL=http://localhost:3000
+
+Copy project and run:
+```sh
+npm install
+```
+```sh
+cd server
+npm install
+```
+```sh
+npm start
+```
+
